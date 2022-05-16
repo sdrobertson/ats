@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>ATS</title>
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand mr-auto" href="#"><img src="img/logo.png" height="30" width="41"></a>
+        <div class="collapse navbar-collapse" id="Navbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active"><a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="./jobs.html"></span>
+                    Jobs</a></li>
+                <li class="nav-item"><a class="nav-link" href="./applicants.html">Applicants</a></li>
+                <li class="nav-item"><a class="nav-link" href="./register.html">Register</a></li>
+            </ul>
+
+            <span class="navbar-text">
+
+                 <a id="loginLink" class="mr-auto">
+                     Login</a>
+                </span>
+
+        </div>
+    </div>
+</nav>
+
+<div id="loginModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" role="content">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Login </h4>
+
+                <button id="closeLoginModalButton" type="button" class="close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-sm-4">
+                            <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                            <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3"
+                                   placeholder="Enter email">
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label class="sr-only" for="exampleInputPassword3">Password</label>
+                            <input type="password" class="form-control form-control-sm mr-1" id="exampleInputPassword3"
+                                   placeholder="Password">
+                        </div>
+                        <div class="col-sm-auto">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox">
+                                <label class="form-check-label"> Remember me
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+
+                        <button id="cancelLoginModalButton" type="button" class="btn btn-secondary btn-sm ml-auto">
+                            Cancel
+                        </button>
+                        <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="reserveTableModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" role="content">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Reserve a Table </h4>
+                <button id="closeReserveTableButton" type="button" class="close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="reserveform">
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label"><strong>Number of Guests</strong></label>
+                        <div class="col-sm-9">
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="numberOfGuests1"
+                                       id="numberOfGuests1"
+                                       value="1">
+                                <label class="form-check-label" for="numberOfGuests1">1</label>
+                            </div>
+
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="numberOfGuests2"
+                                       id="numberOfGuests2"
+                                       value="2">
+                                <label class="form-check-label" for="numberOfGuests2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="numberOfGuests3"
+                                       id="numberOfGuests3"
+                                       value="3">
+                                <label class="form-check-label" for="numberOfGuests3">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="numberOfGuests4"
+                                       id="numberOfGuests4"
+                                       value="4">
+                                <label class="form-check-label" for="numberOfGuests1">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="numberOfGuests5"
+                                       id="numberOfGuests5"
+                                       value="5">
+                                <label class="form-check-label" for="numberOfGuests2">5</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="numberOfGuests6"
+                                       id="numberOfGuests6"
+                                       value="6">
+                                <label class="form-check-label" for="numberOfGuests6">6</label>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label"><strong>Section</strong></label>
+                        <div class="col-sm-9">
+
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons" id="section">
+                                <label class="btn btn-success btn-toggle active">
+                                    <input type="radio" name="options" id="non-smoking" autocomplete="off" checked>Non-Smoking
+                                </label>
+                                <label class="btn btn-danger btn-toggle">
+                                    <input type="radio" name="options" id="smoking" autocomplete="off">Smoking
+                                </label>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="datetime" class="col-12 col-sm-3 col-form-label"><strong>Date and
+                            Time</strong></label>
+                        <div class="col-12 col-sm">
+                            <input type="text" class="form-control" id="date" name="date"
+                                   placeholder="Date">
+                        </div>
+                        <div class="col-12 col-sm">
+                            <input type="text" class="form-control" id="time" name="time"
+                                   placeholder="Time">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <button id="cancelReserveTableButton" type="button" class="btn btn-secondary btn-sm ml-auto">
+                            Cancel
+                        </button>
+                        <button type="submit" class="btn btn-primary btn-sm ml-1">Reserve</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <ol class="col-12 breadcrumb">
+            <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+            <li class="breadcrumb-item active">Jobs</li>
+        </ol>
+        <div class="col-12">
+            <h3>Jobs</h3>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row row-job">
+        <div class="col-12">
+            <div class="card">
+<!--                <img class="card-img-top" src="img/card_top.svg" alt="Card image cap">-->
+                <div class="card-body">
+                    <h5 class="card-title"><a href="#">Head Designer</a></h5>
+                    <p class="card-text">
+
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis odio quis neque dictum viverra vitae sit amet elit. Integer nisi ex, gravida sed sapien a, sodales lobortis leo. Praesent convallis, lacus sed elementum sagittis, dolor sem molestie dui, eget consectetur lorem leo sed eros. Nam vel porttitor leo. Nunc at arcu diam. Donec congue nisi nec dictum rutrum. Nulla facilisi.
+
+                        Mauris at rutrum nunc. Donec id sapien quis ante interdum tempor id non tortor. Sed non neque mi. Mauris vulputate nulla facilisis luctus vestibulum. Aliquam malesuada tempus elit, at hendrerit dolor eleifend et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus sed massa est. Proin eu tortor vel eros ultrices bibendum. Sed et tristique ante. Morbi varius rhoncus maximus. Maecenas sit amet viverra enim, malesuada fringilla libero. Sed imperdiet ac mauris nec vehicula. Donec in dignissim diam. Nulla at nunc quis lacus faucibus sodales. </p>
+                    <a href="#" class="btn btn-primary">See Applications</a>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <div class="row row-job">
+        <div class="col-12">
+            <div class="card" >
+                <!--                <img class="card-img-top" src="img/card_top.svg" alt="Card image cap">-->
+                <div class="card-body">
+                    <h5 class="card-title"><a href="#">Graphic Designer Designer</a></h5>
+                    <p class="card-text">
+
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis odio quis neque dictum viverra vitae sit amet elit. Integer nisi ex, gravida sed sapien a, sodales lobortis leo. Praesent convallis, lacus sed elementum sagittis, dolor sem molestie dui, eget consectetur lorem leo sed eros. Nam vel porttitor leo. Nunc at arcu diam. Donec congue nisi nec dictum rutrum. Nulla facilisi.
+
+                        Mauris at rutrum nunc. Donec id sapien quis ante interdum tempor id non tortor. Sed non neque mi. Mauris vulputate nulla facilisis luctus vestibulum. Aliquam malesuada tempus elit, at hendrerit dolor eleifend et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus sed massa est. Proin eu tortor vel eros ultrices bibendum. Sed et tristique ante. Morbi varius rhoncus maximus. Maecenas sit amet viverra enim, malesuada fringilla libero. Sed imperdiet ac mauris nec vehicula. Donec in dignissim diam. Nulla at nunc quis lacus faucibus sodales. </p>
+                    <a href="#" class="btn btn-primary">See Applications</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row row-job">
+        <div class="col-12">
+            <div class="card">
+                <!--                <img class="card-img-top" src="img/card_top.svg" alt="Card image cap">-->
+                <div class="card-body">
+                    <h5 class="card-title"><a href="#">CSS Designer</a></h5>
+                    <p class="card-text">
+
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis odio quis neque dictum viverra vitae sit amet elit. Integer nisi ex, gravida sed sapien a, sodales lobortis leo. Praesent convallis, lacus sed elementum sagittis, dolor sem molestie dui, eget consectetur lorem leo sed eros. Nam vel porttitor leo. Nunc at arcu diam. Donec congue nisi nec dictum rutrum. Nulla facilisi.
+
+                        Mauris at rutrum nunc. Donec id sapien quis ante interdum tempor id non tortor. Sed non neque mi. Mauris vulputate nulla facilisis luctus vestibulum. Aliquam malesuada tempus elit, at hendrerit dolor eleifend et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus sed massa est. Proin eu tortor vel eros ultrices bibendum. Sed et tristique ante. Morbi varius rhoncus maximus. Maecenas sit amet viverra enim, malesuada fringilla libero. Sed imperdiet ac mauris nec vehicula. Donec in dignissim diam. Nulla at nunc quis lacus faucibus sodales. </p>
+                    <a href="#" class="btn btn-primary">See Applications</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-4 offset-1 col-sm-2">
+                <h5>Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="./jobs.html">Jobs</a></li>
+                    <li><a href="./applicants.html">Applicants</a></li>
+                    <li><a href="./register.html">Register</a></li>
+                </ul>
+            </div>
+            <div class="col-7 col-sm-5">
+                <h5>Our Address</h5>
+                <address>
+                    121, Clear Water Bay Road<br>
+                    Clear Water Bay, Kowloon<br>
+                    HONG KONG<br>
+                    <i class="fa fa-phone fa-lg"></i> Tel.: +852 1234 5678<br>
+                    <i class="fa fa-fax fa-lg"></i>Fax: +852 8765 4321<br>
+                    <i class="fa fa-envelope fa-lg"></i>Email: <a
+                        href="mailto:confusion@food.net">enquiries@ats.net</a>
+                </address>
+            </div>
+            <div class="col-12 col-sm-4 align-self-center">
+                <div class="text-center">
+                    <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i
+                            class="fa fa-google-plus"></i></a>
+                    <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i
+                            class="fa fa-facebook"></i></a>
+                    <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i
+                            class="fa fa-linkedin"></i></a>
+                    <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
+                    <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i
+                            class="fa fa-youtube"></i></a>
+                    <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <p>© Copyright 2018 ATS</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+
+</body>
+
+</html>
